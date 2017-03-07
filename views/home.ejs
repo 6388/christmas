@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Son Tung MTP | KHÓA HỌC NODEJS TẠI KHOAPHAM.VN</title>
+<meta name="description" content="Sản phẩm demo nằm trong KHÓA HỌC LẬP TRÌNH NODEJS tại Khoa Phạm | KhoaPham.Vn" />
+<meta name="fragment" content="!">
+<meta name='robots' content='index,follow' />
+<link rel='stylesheet' id='generalStyle-css'  href='style_dark.css' type='text/css' media='all' />
+<link rel='stylesheet' id='modal-css'  href='js/prettyPhoto/css/prettyPhoto.css' type='text/css' media='all' />
+<script type='text/javascript' src='js/jquery-1.7.min.js'></script>
+<script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
+<script type='text/javascript' src='js/prettyPhoto/js/jquery.prettyPhoto.js'></script>
+<script type='text/javascript' src='js/jquery.quicksand.js'></script>
+<script type="text/javascript" src="js/jquery.history.js"></script>
+<script type='text/javascript' src="main.js"></script>
+<script type='text/javascript' src="https://player.vimeo.com/api/player.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon_dark.ico">
+<script type='text/javascript'>
+var bgTime = 5000;
+var bgPaused=false;
+var menuTime = 600;
+var autoPlay = false;
+var loop = true;
+var twtTime = 3000;
+var prettyTheme = 'dark_square';
+var normalFade = true;
+var frontPage = '';
+var btnSoundURL = '';
+var menuPositionFixed = false;
+
+var videoPaused = false;
+var menuAlwaysOpen = false;
+var bgStretch = true;
+</script>
+<script type='text/javascript' src="js/froogaloop2.min.js"></script>
+</head>
+<body>
+<div id="body-wrapper">
+
+	<div id="bgImage"><div id="bgImageWrapper"></div></div>
+	<div id="bgPattern"></div>
+	<div id="bgText"><h3></h3><div class="subText"></div></div>
+	<div id="content">
+		<div id="contentBox"></div>
+		<div id="contentLoading">
+			<div id="CtLoading">
+				Loading<br/>
+				<img src="images/loading1.gif" width="80" height="10" alt="" />
+			</div>
+		</div>
+	</div>
+
+	<ul id="bgImages">
+		<% data.rows.forEach(function(item){ %>
+			<li>
+				<img class="thumb" src="images/logoSmall/<%= item.image%>" alt="" />
+				<iframe src="http://player.vimeo.com/video/<%= item.key%>?api=1&amp;title=0&amp;byline=0&amp;portrait=0" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+				<h3><%= item.title%></h3>
+				<p><%= item.description%></p>
+			</li>		
+		<% }); %>			
+	</ul>
+
+	<div id="menu-container">
+
+		<div id="logo">
+			<img src="images/logo.png" title="This Way FullScreen" />
+		</div>
+
+		<div id="mainmenu">
+			<div class="menu-header">
+				<ul id="menu-main-menu" class="menu">
+					<li id="menu-item-1">
+						<a href="./"><span class="title">Home</span></a>
+					</li>
+					<li id="menu-item-2">
+						<a href="#!laptrinhvien.html"><span class="title">Dành cho lập trình viên</span></a>
+					</li>
+			</div>
+		</div>
+
+		<div id="menuOpener">Hi!</div>
+		<div id="menuCloser">CLOSE</div>
+
+	</div>
+
+	<div id="footer">
+		<div id="footertext"> Website xây dựng bằng <a href="http://khoapham.vn/khoa-hoc-lap-trinh-nodejs.html" target="_blank">NodeJS + PostGreSQL</a></div>
+
+		<div id="bgControl">
+			<a class="prev" href="javascript:void(0);" onclick="prevBg()"></a>
+			<a class="play" href="javascript:void(0);" onclick="playBg()"></a>
+			<a class="pause" href="javascript:void(0);" onclick="pauseBg()"></a>
+			<a class="next" href="javascript:void(0);" onclick="nextBg()"></a>
+		</div>
+
+		<div id="share">
+			<ul>
+				<li><a class="tip fb" href="http://www.facebook.com/ptdkhoa" tip-text="Facebook"></a></li>
+				<li><a class="tip fb" href="http://www.facebook.com/khoapham.vn" tip-text="Facebook"></a></li>
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+<div id="bodyLoading">
+	<div id="loading">
+		Đang tải<br/>
+		<img src="images/loading1.gif" width="80" height="" alt="loading" />
+	</div>
+</div>
+
+</div>
+</body>
+</html>
